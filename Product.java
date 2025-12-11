@@ -1,10 +1,12 @@
 package com.module;
 
+import java.util.List;
+
 public class Product {
 	
 	private int id;
 	private String name;
-	private String brand;
+	private List<String> brand;
 	private double price;
 	
 	
@@ -14,13 +16,16 @@ public class Product {
 	}
 
 
-	public Product(int id, String name, String brand, double price) {
+	public Product(int id, String name, List<String> brand, double price) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.brand = brand;
 		this.price = price;
 	}
+
+
+
 
 
 	public int getId() {
@@ -43,12 +48,12 @@ public class Product {
 	}
 
 
-	public String getBrand() {
+	public List<String> getBrand() {
 		return brand;
 	}
 
 
-	public void setBrand(String brand) {
+	public void setBrand(List<String> brand) {
 		this.brand = brand;
 	}
 
@@ -67,7 +72,6 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", brand=" + brand + ", price=" + price + "]";
 	}
-	
 	
 	
 

@@ -13,7 +13,11 @@ public class ProductMain {
         
         Product p1=(Product)ctx.getBean("p1");
         
+        Product p2=(Product)ctx.getBean("p2");
+
         System.out.println(p1);
+
+        System.out.println(p2);
 
 
 	}
