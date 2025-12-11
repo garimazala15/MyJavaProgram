@@ -6,6 +6,7 @@ public class Employee {
 	private String empName;
 	private double salary;
 	private String designation;
+	private Address ref;
 	
 	
 	public Employee() {
@@ -13,13 +14,27 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Employee(int id, String empName, double salary, String designation) {
+	
+	public Employee(int id, String empName, double salary, String designation, Address ref) {
 		super();
 		this.id = id;
 		this.empName = empName;
 		this.salary = salary;
 		this.designation = designation;
+		this.ref = ref;
+	}
+
+
+	
+
+
+	public Address getRef() {
+		return ref;
+	}
+
+
+	public void setRef(Address ref) {
+		this.ref = ref;
 	}
 
 
@@ -66,8 +81,11 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", empName=" + empName + ", salary=" + salary + ", designation=" + designation
-				+ "]";
+				+ ", ref=" + ref + "]";
 	}
+
+
+	
 	
 	
 	

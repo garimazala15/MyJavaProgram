@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+        <!-- dependency injection using constructor injection -->
+        <bean id="add1" class="com.module.Address">
+        
+        <constructor-arg value="1278"></constructor-arg> <!-- for constructor injection class must have parameterized constructor and order of 
+        value passed here should be same to constructor order  -->
+        <constructor-arg value="Nanda Nagar"></constructor-arg>
+        <constructor-arg value="Indore"></constructor-arg>
+        <constructor-arg value="MP"></constructor-arg>
+
+        </bean>
+        
+   
+        
+        </beans>
