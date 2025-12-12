@@ -1,8 +1,12 @@
 package com.module;
 
-//POJO class must have default constructor
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
-	
+	@Id
+	private int id;
 	private int rollno;
 	private String name;
 	private int marks;
@@ -10,11 +14,18 @@ public class Student {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Student(int rollno, String name, int marks) {
+	public Student(int id, int rollno, String name, int marks) {
 		super();
+		this.id = id;
 		this.rollno = rollno;
 		this.name = name;
 		this.marks = marks;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getRollno() {
 		return rollno;
@@ -36,9 +47,7 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return "Student [rollno=" + rollno + ", name=" + name + ", marks=" + marks + "]";
+		return "Student [id=" + id + ", rollno=" + rollno + ", name=" + name + ", marks=" + marks + "]";
 	}
 	
-	
-
 }
