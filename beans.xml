@@ -3,52 +3,57 @@
     xmlns:p="http://www.springframework.org/schema/p"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!-- bean definitions here -->
     
-    <!-- bean tag is used to create objects -->
-    
-    <bean id="s1" class="com.module.Student">
-    
-    <!-- dependency injection using setter injection -->
-    <property name="rollno" value="101"/>  <!-- it calls setter method of defined property -->
-    <property name="name" value="Alex"/>  
-    <property name="marks" value="80"/>  
-    </bean>
-    
-    
-     <bean id="s2" class="com.module.Student">
-        <property name="rollno" value="102"/> 
-        <property name="name" value="John"/>  
-        <property name="marks" value="60"/>  
-    </bean>
-    
-    
-    <bean id="emp1" class="com.module.Employee">
-        <property name="id" value="101"/> 
-        <property name="empName" value="Garima"/>  
-        <property name="salary" value="60000"/> 
-        <property name="designation" value="Software Developer"/>  
-         
-    </bean>
-    
-     <bean id="emp2" class="com.module.Employee">
-        <property name="id" value="102"/> 
-        <property name="empName" value="John"/>  
-        <property name="salary" value="65000"/> 
-        <property name="designation" value="Data Analyst"/>  
-         
-    </bean>
-    
-   <bean id="emp3" class="com.module.Employee">
+    <bean id="emp3" class="com.module.Employee">
     
     <constructor-arg value="103"></constructor-arg>
     <constructor-arg value="Alex"></constructor-arg>
     <constructor-arg value="40000"></constructor-arg>
     <constructor-arg value="Manager"></constructor-arg>
-     <constructor-arg ref="add1"></constructor-arg> <!-- passing the reference of address object to employee object -->
-        
-    
+     <constructor-arg>
+     <list>
+     <ref bean="add1"/>
+     <ref bean="add2"/>
+     
+     </list>
+     </constructor-arg> <!-- passing the reference of address object to employee object -->
+
     
     </bean>
     
+    <bean id="emp4" class="com.module.Employee2">
+    
+    <constructor-arg value="104"></constructor-arg>
+    <constructor-arg value="Abhay"></constructor-arg>
+    <constructor-arg value="30000"></constructor-arg>
+    <constructor-arg value="Designer"></constructor-arg>
+     <constructor-arg>
+     <list>
+     <ref bean="add1"/>
+     <ref bean="add2"/>
+     
+     </list>
+     </constructor-arg>
+     </bean>
+     
+      <bean id="b1" class="com.module.Branch">
+    <constructor-arg value="1"></constructor-arg>
+    <constructor-arg value="indore"></constructor-arg>
+    </bean>
+    
+     <bean id="org1" class="com.module.Organization">
+    <constructor-arg value="101"></constructor-arg>
+    <constructor-arg value="TCS"></constructor-arg>
+    <constructor-arg>
+    <map>
+      <entry key-ref="emp4" value-ref="b1"></entry>
+    </map>
+    </constructor-arg>
+    
+    
+    
+    
+    </bean>
+
 </beans>
