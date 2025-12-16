@@ -1,0 +1,21 @@
+<beans 
+   xmlns="http://www.springframework.org/schema/beans" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:p="http://www.springframework.org/schema/p" 
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+              http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+              
+              <bean id="st1" class="com.module.mySingletone" factory-method="getObj">
+              
+              </bean>
+              
+              <bean id="i1" class="com.module.MyFactory" factory-method="getObject">
+              
+              
+              </bean>
+              
+              <bean id="mf2" class="com.module.MyFactory2"></bean>
+              
+              <bean id="i2" class="com.module.MyFactory2" factory-method="getObject" factory-bean="mf2"></bean>
+
+ </beans>
